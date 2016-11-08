@@ -1,0 +1,18 @@
+---
+title: "Hilfequellen"
+author: "Marlene Vietze"
+date: "8 November 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Wichtige Themen der RStudio-Hilfe:
+
+- "Getting Help with R"
+- "An Introduction to R"
+- "R Data Import/Export"
+- "R on StackOverflow"
+- Suchmaske
