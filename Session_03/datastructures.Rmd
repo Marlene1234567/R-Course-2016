@@ -119,6 +119,8 @@ df1[df1$Klasse == 'offen', ][df1$TokenFrequenz < 500, ]
    204
    ---> Bei Fallnummer 204 ist die Maximale Länge von 1600.
 --> which.min (df2$LAENGE)
+  500
+  --> Bei Fallnummer 500 ist die minimale Länge von 251.
 
 * Überprüen, ob es stimmt, dass Frauen im Dialog eher Schweigepausen machen. table()
 --> table(subset(df2$FILLER == "stille",df2$GESCHLECHT == "weiblich"))
