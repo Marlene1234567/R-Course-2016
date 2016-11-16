@@ -106,8 +106,28 @@ df1[df1$Klasse == 'offen', ][df1$TokenFrequenz < 500, ]
 
 * Daten als ein DataFrame einlesen
 
+--> df2 <- read.table("C:/Users/Marlene/R-Course-2016/data/03-1_aeh(m).txt", sep="", header=TRUE) 
+
 * Durchschnittliche PausenlÃ¤nge bei MÃ¤nnern berechnen
 
-* Die kÃ¼rzeste und die lÃ¤nste Pause identifizieren (Fallnummer angeben)
+--> mean(subset(df2$LAENGE,df2$GESCHLECHT=="maennlich"))
+  --> 901,5803
 
-* ÃœberprÃ¼fen, ob es stimmt, dass Frauen im Dialog eher Schweigepausen machen. table()
+* Die kÃ¼rzeste und die lÃ¤nste Pause identifizieren (Fallnummer angeben)
+--> summary(df2) --> Min. Länge: 251, Max. Länge: 1600
+--> which.max (df2$LAENGE)
+   204
+   ---> Bei Fallnummer 204 ist die Maximale Länge von 1600.
+--> which.min (df2$LAENGE)
+
+* Überprüen, ob es stimmt, dass Frauen im Dialog eher Schweigepausen machen. table()
+--> table(subset(df2$FILLER == "stille",df2$GESCHLECHT == "weiblich"))
+
+  TRUE 
+  171 
+table(subset(df2$FILLER == "stille",df2$GESCHLECHT == "maennlich"))
+
+ TRUE 
+ 161
+ 
+ --> Wahr.
