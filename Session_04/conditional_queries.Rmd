@@ -16,12 +16,12 @@ df[1, 1] # Zelle auswaehlen
 ## Bedingte Abfragen
 ```{r}
 v1 <- 1:10
-v1[c(T, F)]
+v1[c(T, F)]  #nur ungerade Werte werden angezeigt bei knit html
 ```
 
 ```{r}
 v.of.classes <- df$Klasse == 'offen'
-df[v.of.classes, ]
+df[v.of.classes, ]                           #bedingte Abfrage
 df[v.of.classes, ][df$TypenFrequenz > 150, ]
 ```
 
