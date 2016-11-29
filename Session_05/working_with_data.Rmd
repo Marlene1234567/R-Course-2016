@@ -45,6 +45,13 @@ sort(v13)
 sort(v13, TRUE)
 order(v13)
 ```
+```{r}
+v14 <- 1:100
+v15 <- seq(1, 100)
+v16 <- vector(mode= 'numeric', 100)
+v17 <- seq_along(v16)
+v17
+```
 
 ```{r ordering, echo = TRUE}
 df2[order(df2$TokenFrequenz), ]
@@ -72,6 +79,8 @@ library(XML)
 
 tokens <- vector('character')
 types <- vector('character')
+wortart <- vector('character')
+genus <- vector('character')
 
 xmlEventParse(
   "../data/t_990505_47.xml", 
@@ -79,6 +88,8 @@ xmlEventParse(
     't' = function(name, attr) {
       tokens <<- c(tokens, attr['word'])
       types <<- c(types, attr['lemma'])
+      genus <<- c(genus, attr['morph'])
+      wortart <<- c(wortart, attr['pos'])
       ## morphology
       }
     ),
@@ -93,11 +104,16 @@ tokens <- unname(tokens)
 ## Aufgaben für selbstständige Arbeit
 
 * Einen Dataframe mit dem Wort, Lemma und Wortart anlegen.
+--> df1 <- data.frame(tokens, types, wortart)
 
 * Daten alphabetisch nach dem Wort sortieren und in eine Datei speichern.
+--> df1[order(df1$tokens), ]
 
 * Durchschnittliche Länge der Substantive in Buchstaben berechnen.
+-->mean(subset(nchar(tokens), df1$wortart == "NN"))
 
 * Den Dataframe anpassen und die Verteilung von Substantiven nach dem Genus berechnen.
+--> sort(table(df1$genus))
 
 * Anzahl der autosemantischen Wörtern im Text berechnen.
+--> table(tokens %in% types)
