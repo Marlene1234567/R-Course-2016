@@ -162,7 +162,7 @@ mean(normal.sample)
 ## Treppenfunktionen
 ```{r, functionplot, echo = T}
 
-plot(cumsum(t2), type = 'S')
+plot(cumsum(t2), type = 'l')
 
 ```
 
