@@ -1,4 +1,10 @@
 *_cache
 *_files
+<<<<<<< HEAD
 *_html
 *_pdf
+=======
+*.html
+*.pdf
+
+>>>>>>> e96b14432915588a002e2a95dfd7bf85a12b6f29
