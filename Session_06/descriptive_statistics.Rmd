@@ -166,11 +166,26 @@ plot(cumsum(t2), type = 'l')
 
 ```
 
-## Aufgaben fÃ¼r selbststÃ¤ndige Arbeit
-* Ein Dataframe mit WortlÃ¤ngen und jeweiligen Wortformen aus einer XML-Datei erstellen.
-* Eine gruppierte Datenreihe aus den rohen Daten konstruieren, die die Frequenzen berÃ¼cksichtigt
+## Aufgaben für selbstständige Arbeit
+* Ein Dataframe mit Wortlängen und jeweiligen Wortformen aus einer XML-Datei erstellen.
+--> Programm von Session 5 laufen lassen (Arbeiten mit XML-Dateien), 
+Vektor erstellen: laenge <- c(nchar(tokens)), 
+beides in einen dataframe speichern: df3 -> data.frame(tokens, laenge)
+
+
+* Eine gruppierte Datenreihe aus den rohen Daten konstruieren, die die Frequenzen berücksichtigt
   (welcher Datentyp ist das?).
-* Diese HÃ¤ufigkeitsverteilung mit einem Histogramm und einem Balkendiagramm darstellen.
+--> table(df3$laenge); Datentyp: Integer
+
+* Diese Häufigkeitsverteilung mit einem Histogramm und einem Balkendiagramm darstellen.
+--> hist(table(df3$laenge)); barplot(table(df3$laenge))
+
 * Ein Balkendiagramm mit der Bibliothek `ggplot2` mit denselben Daten erstellen (oder mindestens versuchen).
-* Deskriptive Werte fÃ¼r die Types berechnen (wie fÃ¼r Tokens bereits gemacht)
-* Werte tabellarisch mit Fall, HÃ¤ufigkeit, relative HÃ¤ufigkeit, SummenhÃ¤ufigkeit, relative SummenhÃ¤ufigkeit darstellen
+--> p<-ggplot(data=df3, aes(x=laenge, y=tokens)) +
+    geom_bar(stat="identity") 
+    p
+
+* Deskriptive Werte für die Types berechnen (wie für Tokens bereits gemacht)
+--> summary(types)
+
+* Werte tabellarisch mit Fall, Häufigkeit, relative Häufigkeit, Summenhäufigkeit, relative Summenhäufigkeit darstellen

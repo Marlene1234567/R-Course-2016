@@ -111,7 +111,7 @@ tokens <- unname(tokens)
 ```
 
 
-## Aufgaben fÃ¼r selbststÃ¤ndige Arbeit
+## Aufgaben für selbstständige Arbeit
 
 * Einen Dataframe mit dem Wort, Lemma und Wortart anlegen.
 --> df1 <- data.frame(tokens, types, wortart)
@@ -119,11 +119,11 @@ tokens <- unname(tokens)
 * Daten alphabetisch nach dem Wort sortieren und in eine Datei speichern.
 --> df1[order(df1$tokens), ]
 
-* Durchschnittliche LÃ¤nge der Substantive in Buchstaben berechnen.
+* Durchschnittliche Länge der Substantive in Buchstaben berechnen.
 -->mean(subset(nchar(tokens), df1$wortart == "NN"))
 
 * Den Dataframe anpassen und die Verteilung von Substantiven nach dem Genus berechnen.
 --> sort(table(df1$genus))
 
-* Anzahl der autosemantischen WÃ¶rtern im Text berechnen.
+* Anzahl der autosemantischen Wörtern im Text berechnen.
 --> table(tokens %in% types)
