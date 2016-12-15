@@ -12,8 +12,13 @@ When you click the **Knit** button _a document_ will be generated that includes 
 ```{r summary_block, echo = F, cache = T}
 summary(cars)
 ```
+<<<<<<< HEAD
 ```{r}
 print("Hello World")
+=======
+```{r, echo = FALSE}
+print("Hello World!")
+>>>>>>> 0e6960ff817c4bc7813bf52ffb6b2ef6ec17fe65
 ```
 
 You can also embed plots, for example:
@@ -24,6 +29,7 @@ plot(cars)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
+<<<<<<< HEAD
 ## Wie bekomme ich Hilfe in R?
 
 Wir ˆchten die Hilfe f¸r die Funktion "print()" bekommen.
@@ -40,6 +46,26 @@ Man kann die eingebaute Hilfe in RStudio benutzen.
 
 
 ## Aufgaben f¸r selbstst‰ndige Arbeit
+=======
+## Wie bekomme Hilfe in R?
+
+Wir m√∂chten die Hilfe f√ºr die Funktion `print()` bekommen.
+
+- Variante I:
+```{r}
+?print
+```
+
+- Variante II:
+```{r}
+help(print)
+```
+
+- Variante III:
+Man kann die eingebaute Hilfe in RStudio benuten.
+
+## Aufgaben f√ºr selbstst√§ndige Arbeit
+>>>>>>> 0e6960ff817c4bc7813bf52ffb6b2ef6ec17fe65
 
 - in form eines `Rmd`-Dokumentes zug√§ngliche Hilfequellen auflisten
 - ein Streuungsdiagramm mit beliebigen Daten erstellen und exportieren
