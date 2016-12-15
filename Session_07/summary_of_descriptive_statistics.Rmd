@@ -51,8 +51,8 @@ ggplot(planungspausen, aes(x = LAENGE)) + geom_histogram(binwidth = 15, color = 
 ggplot(planungspausen, aes(x = LAENGE)) + geom_density()
 ```
 
-## Aufgaben fÃ¼r selbststÃ¤ndige Arbeit
-* WortlÃ¤ngen in Buchstaben fÃ¼r einen deutschen Wikipedia-Text berechnen;
-* Desktiprive Analyse der WortlÃ¤ngen vornehmen;
-* die HÃ¤ufigkeitsverteilung in Form eines Historgramms darstellen;
-* die HÃ¤ufigkeitsverteilung in Form eines Balkendiagramms mit der Differinzierung nach der Wortart darstellen.
+## Aufgaben für selbstständige Arbeit
+* Wortlängen in Buchstaben für einen deutschen Wikipedia-Text berechnen;
+* Desktiprive Analyse der Wortlängen vornehmen;
+* die Häufigkeitsverteilung in Form eines Historgramms darstellen;
+* die Häufigkeitsverteilung in Form eines Balkendiagramms mit der Differinzierung nach der Wortart darstellen.

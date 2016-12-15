@@ -71,6 +71,7 @@ summary(pause.length)
 boxplot(planungspausen$LAENGE)
 ```
 
-## Aufgaben fÃ¼r selbststÃ¤ndige Arbeit
-* die Formel fÃ¼r die Berechnung der Standardabweichung implementieren;
+## Aufgaben für selbstständige Arbeit
+* die Formel für die Berechnung der Standardabweichung implementieren;
+--> 
 * als Boxplots die LÃ¤ngen der Lemmata und der Wortformen (in Buchstabe) in einer Graphik anzeigen lassen.
