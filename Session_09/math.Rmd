@@ -5,8 +5,8 @@ date: "22/12/2016"
 output: html_document
 ---
 
-`R` ist nicht primÃ¤r eine mathematische Umgebung wie z.B. `GNU Octave`, aber man findet eine Reihe von
-wichtigen Funktionen, u.A. fÃ¼r die Umwandlung der Matrizen.
+`R` ist nicht primär eine mathematische Umgebung wie z.B. `GNU Octave`, aber man findet eine Reihe von
+wichtigen Funktionen, u.A. für die Umwandlung der Matrizen.
 
 ## Grundrechenarten
 ```{r}
@@ -45,7 +45,7 @@ log2(8)
 ```
 
 ## Trigonometrische Funktionen
-Radiant-WinkelmaÃŸ
+Radiant-Winkelmaß
 $$
   \alpha^{\circ} = \frac{\pi}{180}\cdot \alpha \text{ rad} 
 $$
@@ -99,12 +99,25 @@ A %*% D
 
 ## Quellen
 
-- Hedderich, JÃ¼rgen, und Lothar Sachs. _Angewandte Statistik: Methodensammlung mit R._ 14th ed. Springer, 2012. S. 37-45
+- Hedderich, Jürgen, und Lothar Sachs. _Angewandte Statistik: Methodensammlung mit R._ 14th ed. Springer, 2012. S. 37-45
 
 ## Aufgaben
 
-Wir nehmen an, dass die LÃ¤nge der WÃ¶rter in Buchstaben linear mit der HÃ¤ufigkeit zusammenhÃ¤ngt:
+Wir nehmen an, dass die Länge der Wörter in Buchstaben linear mit der Häufigkeit zusammenhängt:
 
-- bilden Sie eine Matrix mit 10 Beobachtungen Ã¼ber die LÃ¤nge;
-- entwerfen Sie drei lineare Modelle mit Ihrer ParameterschÃ¤tzung;
-- berechnen Sie die vorhergesagte HÃ¤ufigkeitswerte.
+- bilden Sie eine Matrix mit 10 Beobachtungen über die Länge;
+ --> E <- matrix(1:10, nrow = 5, ncol = 2, byrow = T)
+ 
+- entwerfen Sie drei lineare Modelle mit Ihrer Parameterschätzung;
+ -->  laenge <- c(3, 5, 10, 11, 14)
+      haeufigkeit <- c(20, 15, 5, 3, 1)
+      lm (laenge ~ haeufigkeit +1)
+      
+- berechnen Sie die vorhergesagten Häufigkeitswerte.
+ --> laenge <- c(3, 5, 10, 11, 14)
+    h1 <- c(20, 15, 5, 3, 1)
+    h2 <- c(19, 12, 7, 5, 2)
+    h3 <- c(15, 10, 6, 4, 1)
+    m1 <- matrix(c(laenge, h1), 5)
+    m2 <- matrix(c(laenge, h2), 5)
+    m3 <- matrix(c(laenge, h3), 5)

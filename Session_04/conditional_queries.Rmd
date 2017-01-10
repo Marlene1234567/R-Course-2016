@@ -25,10 +25,10 @@ df[v.of.classes, ]                           #bedingte Abfrage
 df[v.of.classes, ][df$TypenFrequenz > 150, ]
 ```
 
-## Aufgaben fÃ¼r selbststÃ¤ndige Arbeit
+## Aufgaben für selbstständige Arbeit
 * auf der Seite http://swirlstats.com/ das Paket `swirl` kennenlernen
 
 * den Swirl-Kurs "R Programmin by swirl team" anfangen
 
-* die Dokumentation fÃ¼r das Paket `readr` durchlesen: https://github.com/tidyverse/readr
+* die Dokumentation für das Paket `readr` durchlesen: https://github.com/tidyverse/readr
 

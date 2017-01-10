@@ -31,7 +31,7 @@ myCorpus = Corpus(VectorSource(tokens))
 myCorpus = tm_map(myCorpus, removePunctuation)
 myCorpus = tm_map(myCorpus, removeNumbers)
 myCorpus = tm_map(myCorpus, removeWords,
-                  c(stopwords("german"), "die", "der", "das"))
+                 c(stopwords("german"), "die", "der", "das"))
 
 myDTM = TermDocumentMatrix(myCorpus,
                            control = list(minWordLength = 1))
@@ -40,7 +40,7 @@ m = as.matrix(myDTM)
 sorted.matrix <- sort(rowSums(m), decreasing = TRUE)
 
 wordcloud(names(sorted.matrix), sorted.matrix, scale=c(4,0.5),
-          min.freq = 1, max.words = 20,
+          min.freq = 4, max.words =45,
           colors = brewer.pal(8, "Dark2"))
 ```
 
@@ -55,43 +55,43 @@ stadt2 <- c(6, 7, 8, 9, 10, 12, 16, 15, 11, 9, 8, 7)
 
 
 #pdf('out.pdf')
-plot(c(1:12), stadt1, type='b', col='dark red',
-     xlim=c(0,12), ylim=c(min(stadt1, stadt2),
+plot(c(1:12), stadt1, type='b', col='dark red', #b= beides- Linien und Punkte
+     xlim=c(0,12), ylim=c(min(stadt1, stadt2), #wie groß x und y 
                           max(stadt1, stadt2)),
-     xlab='Monate', ylab='Temperatur im Schnitt',
-     main='Temperaturvergleich',
-     axes = FALSE)
+     xlab='Monate', ylab='Temperatur im Schnitt', #Beschriftung x, y
+     main='Temperaturvergleich', #Überschrift
+     axes = FALSE) #keine Achsen
 
-axis(1, at=1:12, labels=monate, las=2)
-axis(2, at=sort(c(stadt1, stadt2)))
+axis(1, at=1:12, labels=monate, las=2) #Achse 1-> unten, Beschriftung Monate
+axis(2, at=sort(c(stadt1, stadt2))) #nur die Werte anzeigen, die auch vorkommen
 
 
 #mtext('Monate', side=1)
 #mtext('Temperatur im Schnitt', side=2)
 points(c(1:12), stadt2, type='b', col='green')
-#grid(nx=13)
-grid(NA, 39)
-abline(h=0)
-text(11, 25, 'Stadt 1')
+##grid(nx=13)
+grid(NA, 39) #NA keine x achse, aber linien zu y achse
+abline(h=0) #Linie bei 0
+text(11, 25, 'Stadt 1') #Wo beschriftet werden soll (x, y, Beschriftung)
 text(7, 10, 'Stadt 2')
 
 #box()
-#dev.off()
+#dev.off() #beendet arbeit mit Pdf (wenn oben aktiviert)
 ```
-```{r Kuchendiagramme}
+```{r Kuchendiagramme} 
 library(plotrix)
 POS <- c(3,4,5,3,1,2,2)
 labs <- c('A', 'M', 'N', 'P', 'Part', 'V', 'Adj')
 names(POS) <- c('A', 'M', 'N', 'P', 'Part', 'V', 'Adj')
 
-par(mfrow=c(1,2))
+par(mfrow=c(1,2)) #number of rows 1 zeile 2 spalten, 1. grafik li, 2. re
 
-pie(POS, main="Kuchendiagramm")
+pie(POS, main="Kuchendiagramm") #pos = häufigkeiten, main = Name
 
 pie3D(POS,
       main="POS-Verteilung",
-      labels=names(POS),
-      explode=0.1
+      labels=names(POS), #muss extra angegeben werden
+      explode=0.5 #wie viel Abstand zwischen den Elementen
       )
 ```
 ```{r combined_graphics}
@@ -99,7 +99,7 @@ freq <- c(rep(0, 1), rep(1000, 2), rep(2000, 3), rep(3000, 4), rep(4000, 5), rep
 
 bins <- c(0, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 10000, 15000, 25000, 50000)
 
-par(mfrow=c(2,2))
+par(mfrow=c(2,2)) #Matrix = 2x2 -> 4 Grafiken
 
 par(fg='blue')
 hist(freq, freq=FALSE, breaks=bins, right = FALSE, axes = FALSE, main = NULL, xlab = NULL, ylab = NULL)
@@ -127,6 +127,6 @@ pie3D(slices, explode=0.1, labels=names(slices))
 
 ```
 
-## Aufgaben fÃ¼r selbststÃ¤ndige Arbeit
+## Aufgaben für selbstständige Arbeit
 
-* Aus dem vorhandenen Text Wortwolken mit jeweils nur Verben, Substantiven und grammatischen Wortformen erstellen.
+* Aus dem vorhandenen Text Wortwolken mit jeweils nur Verben, Substantiven und grammatischen Wortformen (Lemmata) erstellen. -> Häufigkeit von lemma im vekotor zählen, 3 gruppen: Verben, Subst, gram. Wortformen-> präp, fragewörter, ; in vertikale grafik ( eine wortwolke über anderer über dritter, wolken benennen(main)) xml einlesen, pos tags, v mit pos, inizes bestimmen (selbe in beiden vektoren)

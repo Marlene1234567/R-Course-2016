@@ -15,7 +15,7 @@ plot(density(kursB))
 ```
 
 
-## Desktiprive Ma√üe
+## Desktiprive Maﬂe
 ```{r descriptive_measures}
 library(moments)
 

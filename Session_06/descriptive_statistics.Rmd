@@ -17,7 +17,7 @@ $$
 k = \log_2 n + 1
 $$
 
-## HÃ¤ufigkeistverteilungen
+## Häufigkeistverteilungen
 ```{r table, echo = T}
 head(df$FILLER)
 
@@ -95,7 +95,7 @@ token.lengths <- nchar(tokens)
 length(tokens)
 ```
 
-## WÃ¶rter auswÃ¤hlen
+## Wörter auswählen
 
 ```{r choose_words, echo = T}
 tokens[nchar(tokens) == 22]

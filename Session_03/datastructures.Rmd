@@ -14,7 +14,7 @@ v3 <- c('a', 'b', 'c', 'd', 'e', 'z')
 v3
 ```
 
-##Vektortyp Ã¼berprÃ¼fen
+##Vektortyp überprüfen
 ```{r echo = TRUE}
 typeof(v2)
 typeof(v3)
@@ -23,15 +23,6 @@ typeof(v3)
 ```{r echo = TRUE}
 seq(1, 11, 2) # Kommentar
 ```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
 
 ## DataFrames
 
@@ -108,12 +99,12 @@ df1[df1$Klasse == 'offen', ][df1$TokenFrequenz < 500, ]
 
 --> df2 <- read.table("C:/Users/Marlene/R-Course-2016/data/03-1_aeh(m).txt", sep="", header=TRUE) 
 
-* Durchschnittliche PausenlÃ¤nge bei MÃ¤nnern berechnen
+* Durchschnittliche Pausenlänge bei Männern berechnen
 
 --> mean(subset(df2$LAENGE,df2$GESCHLECHT=="maennlich"))
   --> 901,5803
 
-* Die kÃ¼rzeste und die lÃ¤nste Pause identifizieren (Fallnummer angeben)
+* Die kürzeste und die länste Pause identifizieren (Fallnummer angeben)
 --> summary(df2) --> Min. Länge: 251, Max. Länge: 1600
 --> which.max (df2$LAENGE)
    204

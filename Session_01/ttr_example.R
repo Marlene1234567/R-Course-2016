@@ -5,13 +5,13 @@ lines <- readLines('../data/t_990505_47.xml')
 ## (d.h. Zeilen, die mit "<t " beginnen).
 token.indexes <- grep('<t ', lines)
 
-## WÃ¤hle alle Zeilen mit Tokens aus.
+## Wähle alle Zeilen mit Tokens aus.
 tokens <- lines[token.indexes]
 
-## LÃ¶sche alles vor dem Lemma.
+## Lösche alles vor dem Lemma.
 junk.lemmas <- sub(".+ lemma=\"", "", tokens)
 
-## LÃ¶sche alles nach dem Lemma.
+## Lösche alles nach dem Lemma.
 lemmas <- sub("\".+", "", junk.lemmas)
 
 ## Anzahl der Types ist gleich Null.
@@ -20,10 +20,10 @@ types.count <- 0
 ## Noch keine Types gesehen.
 seen.types <- NULL
 
-## Lege eine Liste fÃ¼r Typesanzahl fÃ¼r jede Stelle im Text an.
+## Lege eine Liste für Typesanzahl für jede Stelle im Text an.
 types.on.position <- vector(length = length(lemmas))
 
-## FÃ¼r jede Lemmanummer
+## Für jede Lemmanummer
 for (i in seq_along(lemmas)) {
 
     ## suche das ensprechende Lemma,
@@ -32,13 +32,13 @@ for (i in seq_along(lemmas)) {
     ## und, falls es noch nicht gesehen wurde,
     if (!(lemma %in% seen.types)) {
 
-        ## zÃ¤hle es als neu mit,
+        ## zähle es als neu mit,
         types.count <- types.count + 1
         ## und lege es in die Liste der gesehenen Lemmata ab.
         seen.types <- c(seen.types, lemma)
     }
 
-    ## FÃ¼ge die Anzahl fÃ¼r die aktuelle Lemmanummer in die Liste ein.
+    ## Füge die Anzahl für die aktuelle Lemmanummer in die Liste ein.
     types.on.position[i] <- types.count
 }
 
